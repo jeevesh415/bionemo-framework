@@ -110,7 +110,7 @@ def export_hf_checkpoint(tag: str, export_path: Path):
 
     shutil.copy("LICENSE", export_path / tag / "LICENSE")
 
-    del model_hf, model_te
+    del model_hf, model_te, model_hf_masked_lm
     gc.collect()
     torch.cuda.empty_cache()
 
